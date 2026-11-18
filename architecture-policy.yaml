@@ -2357,3 +2357,9 @@ exceptions:
     paths:
       - packages/ui/src/root/GlobalDatabaseStartupLoading.tsx
     reason: 启动失败页在现有复制诊断/重试/退出旁增加导出日志按钮（docs/desktop/database-migration-startup-gate-plan.md）。只扩展既有失败页交互，不新增文件、不改变启动状态 owner 或模块边界；接管 packages/ui/src/root 不在本次范围内。
+  - id: cli-usage-quota-command
+    rule: unmanaged-new-file
+    paths:
+      - apps/zcode-cli/packages/cli/src/usage-command.ts
+      - apps/zcode-cli/packages/cli/src/command-center/handlers/usage.ts
+    reason: 新增 `zcode usage` 与 `/usage`（Coding Plan 配额剩余查询），复用共享凭据库中的 zai access token 请求与 GUI Usage Statistics 相同的 /api/monitor/usage/quota/limit；格式化与查询函数独立成两个小文件供 CLI 入口与 TUI 斜杠命令共用，不改变模块边界，接管整个 zcode-cli 不在本次范围内。

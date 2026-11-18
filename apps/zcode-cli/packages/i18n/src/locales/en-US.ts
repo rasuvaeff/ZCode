@@ -22,6 +22,7 @@ Commands:
   logout     Remove the shared Z.AI login credentials
   plugins    Manage plugins and marketplaces (\`plugins list|install|uninstall|enable|disable|update|validate|marketplace ...\`; alias: plugin)
   skills     List local skills (\`skills list\`)
+  usage      Show Coding Plan quota remaining (5-hour / weekly)
   tui        Open the terminal UI
   version    Print the CLI version
 

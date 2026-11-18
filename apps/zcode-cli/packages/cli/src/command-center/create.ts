@@ -15,6 +15,7 @@ import { handleModelCommand } from "./handlers/model.js";
 import { handlePluginsCommand } from "./handlers/plugins.js";
 import { handleSkillListCommand } from "./handlers/skill.js";
 import { handleTargetCommand } from "./handlers/goal.js";
+import { handleUsageCommand } from "./handlers/usage.js";
 import { recordSlashCommandInHistory } from "./history.js";
 import { attachCurrentSessionMetadata, normalizeTuiPromptInput } from "./metadata.js";
 import { buildCheckpointSelection, buildSessionSelection } from "./selections.js";
@@ -289,6 +290,10 @@ export function createCommandCenter(deps: CommandCenterDeps): TuiSubmitPrompt {
 
       if (command.name === "mcp") {
         return handleMcpCommand(command.args, deps);
+      }
+
+      if (command.name === "usage") {
+        return handleUsageCommand(deps);
       }
 
       if (command.name === "plugins") {

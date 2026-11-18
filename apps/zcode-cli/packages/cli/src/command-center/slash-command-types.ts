@@ -67,6 +67,12 @@ export type SlashCommand =
     }
   | {
       args: string;
+      name: "usage";
+      rawName: string;
+      type: "known";
+    }
+  | {
+      args: string;
       name: "plugins";
       rawName: string;
       type: "known";

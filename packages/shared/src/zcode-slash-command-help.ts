@@ -196,4 +196,14 @@ export const BUILTIN_ZCODE_SLASH_COMMAND_HELP_ENTRIES: readonly BuiltinZCodeSlas
     summary: "Design and launch a dynamic workflow for a task.",
     usage: "/workflow [what the workflow should accomplish]",
   },
+  {
+    details: [
+      "Shows the Coding Plan quota remaining for the 5-hour and weekly windows.",
+      "Reads the same account as Usage Statistics in the desktop app.",
+      "Requires being logged in with a Coding Plan account (zcode login).",
+    ],
+    name: "usage",
+    summary: "Show Coding Plan quota remaining.",
+    usage: "/usage",
+  },
 ] as const;

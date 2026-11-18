@@ -1058,6 +1058,15 @@ test("parses login and logout slash commands", () => {
   });
 });
 
+test("parseSlashCommand recognizes /usage", () => {
+  assert.deepEqual(parseSlashCommand("/usage"), {
+    args: "",
+    name: "usage",
+    rawName: "usage",
+    type: "known",
+  });
+});
+
 test("command center handles login and logout locally", async () => {
   let loginCalled = false;
   let loginAbortSignal: AbortSignal | undefined;

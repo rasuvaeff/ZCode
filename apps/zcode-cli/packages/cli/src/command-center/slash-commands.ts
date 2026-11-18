@@ -193,6 +193,15 @@ export function parseSlashCommand(input: string): SlashCommand | null {
     };
   }
 
+  if (rawName === "usage") {
+    return {
+      args,
+      name: "usage",
+      rawName,
+      type: "known",
+    };
+  }
+
   if (rawName === "plugins" || rawName === "plugin") {
     return {
       args,
